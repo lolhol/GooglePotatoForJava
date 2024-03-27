@@ -1,15 +1,15 @@
-#include <iostream>
-#include <fstream>
-
-#include <sys/time.h>
+#include <libgen.h>
 #include <stdlib.h>
 #include <string.h>
-#include <libgen.h>
+#include <sys/time.h>
+
+#include <fstream>
+#include <iostream>
 
 #include "carto.h"
-#include "sensor_data.h"
-#include "pose.h"
 #include "simple_grid_map.h"
+#include "util/pose.h"
+#include "util/sensor_data.h"
 
 using namespace std;
 
@@ -26,93 +26,107 @@ Position last_pose;
  * 该位姿可以作为建图过程中机器人的位姿
  * 但最终优化之后可能不准确（因为优化过程中地图变化了）
  */
-void pose_change_callback(Position &pose) {
-    if(pose.timestamp > last_pose.timestamp) {
+void pose_change_callback(const Position &pose) {
+    if (pose.timestamp > last_pose.timestamp) {
         last_pose = pose;
     }
 }
 
 int main(int argc, char *argv[]) {
-
-    if(argc < 5) {
+    if (argc < 5) {
         cout << "Usage: " << argv[0] << " config_dir config_file replay_bag map_output_path" << endl;
         return 1;
     }
 
-    //Initialize cartographer module
-    //初始化
-    CartoModule *carto = new CartoModule(argv[1], argv[2], pose_change_callback);
+    // Initialize cartographer module
+    // 初始化
+    CartoModule *carto = new CartoModule(argv[1], argv[2], pose_change_callback, false, false, 10.0);
 
-    //Decode senser datas from replaybag file
-    //读取回放文件中的传感器数据并输入
+    // Decode senser datas from replaybag file
+    // 读取回放文件中的传感器数据并输入
     ifstream ifile(argv[3], ios::in | ios::binary);
     int data_size = 0, type = 0;
     char *buf;
-    while(!ifile.eof()) {
-        ifile.read((char*)(&data_size), sizeof(int));
-        if(data_size <= 0) {
-            cerr << "Replay data format error" << endl;
+    int c = 0;
+    while (!ifile.eof()) {
+        c++;
+        ifile.read((char *) (&data_size), sizeof(int));
+        if (data_size <= 0) {
+            cerr << "Replay data format error " << c << endl;
             return 1;
         }
-        ifile.read((char*)(&type), sizeof(int));
+        ifile.read((char *) (&type), sizeof(int));
         buf = new char[data_size];
         ifile.read(buf, data_size);
-        if(type == 1) {
+        if (type == 1) {
             ImuData2D imu_data;
             imu_data.from_char_array(buf, data_size);
-            carto->handle_imu_data(imu_data);
-        }
-        else if(type == 2) {
+            // carto->handle_imu_data(imu_data);
+        } else if (type == 2) {
             PointCloudData radar_data;
             radar_data.from_char_array(buf, data_size);
-            carto->handle_radar_data(radar_data);
+            carto->handle_lidar_data(radar_data);
         }
     }
-    //Stop cartographer
-    //停止建图
+    // Stop cartographer
+    // 停止建图
     carto->stop_and_optimize();
-    
-    //Get map
-    //获取地图数据
+
+    // Get map
+    // 获取地图数据
     vector<char> map_data;
     carto->paint_map(&map_data);
 
     delete carto;
 
-    //Example of class SimpleGridMap:
-    //地图对象的使用示例:
+    // Example of class SimpleGridMap:
+    // 地图对象的使用示例:
     SimpleGridMap *map = new SimpleGridMap(map_data.data(), map_data.size());
     MapInfo info = map->get_info();
-    //Grid numbers in this grid map:
-    //地图中的格栅总数
+    // Grid numbers in this grid map:
+    // 地图中的格栅总数
     int grid_size = info.width * info.height;
-    //Map range in global coordinate system, where (0,0) means the start position
-    //全局坐标系中的地图范围，坐标系原点为建图的起始位置
+    // Map range in global coordinate system, where (0,0) means the start position
+    // 全局坐标系中的地图范围，坐标系原点为建图的起始位置
     double min_x = info.origen_x, max_x = info.origen_x + info.resolution * info.width;
     double min_y = info.origen_y, max_y = info.origen_y + info.resolution * info.height;
-    //Get grid value of point (x,y) in global coordinate system, return -1 as Unobserved, 0-1 as occupied possibility
-    //获取全局坐标系中的点(x,y)的格栅值，-1表示未观测到，0-1表示格栅占据概率
-    double value = map->get(0.5, 1.0);
-    if(value < 0) {
-        //Unobserved
-    }
-    else {
-        if(value > 0.4) {
-            //Occupied
-        }
-        else {
-            //Free
-        }
-    }
+    // Get grid value of point (x,y) in global coordinate system, return -1 as Unobserved, 0-1 as occupied possibility
+    // 获取全局坐标系中的点(x,y)的格栅值，-1表示未观测到，0-1表示格栅占据概率
+    // double value = map->get(0.5, 1.0);
 
     delete map;
 
-    cout << "Output map to file " << argv[4] << endl;
+    cout << "Output map to file | " << grid_size << " | " << map_data.size() << " | " << argv[4] << endl;
+
     ofstream ofile(argv[4], ios::out | ios::binary);
-    ofile.write(map_data.data(), map_data.size());
+
+    ofile << "P2" << endl;
+    ofile << info.width << " " << info.height << " " << 255 << endl;
+
+    for (int y = 0; y < info.height; ++y) {
+        for (int x = 0; x < info.width; ++x) {
+            int cur = info.map_xy_to_array_index(x, y);
+            double value = (map->datas[cur] & 0xff) / 100.;
+
+            int color;
+            if (value < 0) {
+                color = 127;
+            } else {
+                if (value > 0.4) {
+                    color = 0;
+                } else {
+                    color = 255;
+                }
+            }
+
+            ofile << (int) (map->datas[cur] & 0xff) << " ";
+        }
+
+        ofile << endl;
+    }
+
+    // ofile.write(map_data.data(), map_data.size());
     ofile.close();
 
     return 0;
 }
-
-

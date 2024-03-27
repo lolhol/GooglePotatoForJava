@@ -1,0 +1,10 @@
+# ninja log v5
+677	5333	1711171429957121863	CMakeFiles/cartographer4java.dir/util/data_transform.cpp.o	4792735eed2b8828
+2106	11176	1711226097431881297	CMakeFiles/cartographer4java.dir/java/brigero/cartographer4java/cartographer4java.cpp.o	78487eb1361a8f4c
+8	1714	0	CMakeFiles/JavaCompile	cc4b4f209d6acbb1
+8	1714	0	/home/ubuntu/Documents/cartographer_2d_demo/cmake-build-debug/CMakeFiles/JavaCompile	cc4b4f209d6acbb1
+1714	2103	0	/home/ubuntu/Documents/cartographer_2d_demo/cmake-build-debug/CMakeFiles/JavaJarify	86f7ad8a145ae3d5
+2104	13133	1711226099383190614	CMakeFiles/cartographer4java.dir/carto.cpp.o	4cacc24bf963b913
+755	1027	1711171316452801466	CMakeFiles/cartographer4java.dir/simple_grid_map.cpp.o	74ec180f9900ac63
+2108	11122	1711226097379899588	CMakeFiles/cartographer4java.dir/main.cpp.o	3e1b57ef4d76014d
+1714	2103	0	CMakeFiles/JavaJarify	86f7ad8a145ae3d5

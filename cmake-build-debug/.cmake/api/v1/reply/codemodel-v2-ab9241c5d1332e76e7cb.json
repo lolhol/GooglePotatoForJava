@@ -1,0 +1,115 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-fbe7bf7ae9f13d7ddba1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.10"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "map_creator",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "JavaCompile::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JavaCompile-Release-c0e26fc9cf2103b7d684.json",
+					"name" : "JavaCompile",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "JavaCompile3D::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JavaCompile3D-Release-f997ea4672f9196084e4.json",
+					"name" : "JavaCompile3D",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "JavaJarify::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JavaJarify-Release-b83178840bde9d938861.json",
+					"name" : "JavaJarify",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "JavaJarify3D::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-JavaJarify3D-Release-d84f70efe7a5e1cb2a69.json",
+					"name" : "JavaJarify3D",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cartographer4java::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cartographer4java-Release-5e6df73b04a66a314da1.json",
+					"name" : "cartographer4java",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "cartographer4java3D::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cartographer4java3D-Release-e2fd9432c368e12b444e.json",
+					"name" : "cartographer4java3D",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "map_creator_detect_changes::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-map_creator_detect_changes-Release-843db3e3bd0cc978ffbb.json",
+					"name" : "map_creator_detect_changes",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/ubuntu/Documents/cartographer_2d_demo/cmake-build-debug",
+		"source" : "/home/ubuntu/Documents/cartographer_2d_demo"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Cartographer4Java">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Cartographer4Java.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
