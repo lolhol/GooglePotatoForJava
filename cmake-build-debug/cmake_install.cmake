@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/Documents/cartographer_2d_demo
+# Install script for directory: /home/godbrigero/Documents/cartographer_2d_demo
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -57,7 +57,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/usr/lib/jni" TYPE SHARED_LIBRARY FILES "/home/ubuntu/Documents/cartographer_2d_demo/cmake-build-debug/libcartographer4java.so")
+  file(INSTALL DESTINATION "/usr/lib/jni" TYPE SHARED_LIBRARY FILES "/home/godbrigero/Documents/cartographer_2d_demo/cmake-build-debug/libcartographer4java.so")
   if(EXISTS "$ENV{DESTDIR}/usr/lib/jni/libcartographer4java.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/jni/libcartographer4java.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -70,7 +70,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/ubuntu/Documents/cartographer_2d_demo/cmake-build-debug/CMakeFiles/cartographer4java.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("/home/godbrigero/Documents/cartographer_2d_demo/cmake-build-debug/CMakeFiles/cartographer4java.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -88,7 +88,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-  file(INSTALL DESTINATION "/usr/lib/jni" TYPE SHARED_LIBRARY FILES "/home/ubuntu/Documents/cartographer_2d_demo/cmake-build-debug/libcartographer4java3D.so")
+  file(INSTALL DESTINATION "/usr/lib/jni" TYPE SHARED_LIBRARY FILES "/home/godbrigero/Documents/cartographer_2d_demo/cmake-build-debug/libcartographer4java3D.so")
   if(EXISTS "$ENV{DESTDIR}/usr/lib/jni/libcartographer4java3D.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/lib/jni/libcartographer4java3D.so")
     if(CMAKE_INSTALL_DO_STRIP)
@@ -101,7 +101,7 @@ if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
-  include("/home/ubuntu/Documents/cartographer_2d_demo/cmake-build-debug/CMakeFiles/cartographer4java3D.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
+  include("/home/godbrigero/Documents/cartographer_2d_demo/cmake-build-debug/CMakeFiles/cartographer4java3D.dir/install-cxx-module-bmi-Release.cmake" OPTIONAL)
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
@@ -112,5 +112,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/ubuntu/Documents/cartographer_2d_demo/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/godbrigero/Documents/cartographer_2d_demo/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -26,7 +26,10 @@ std::vector<std::vector<float>> CreatePointPointCloudFromHybridGrid(
                                               z * resolution + resolution / 2);
 
       int prob_int = hybrid_grid.values(i);
-      point_cloud.push_back({point.x(), point.y(), point.z(), static_cast<float>(prob_int / 32767.0)});
+      point_cloud.push_back({static_cast<float>(x * resolution + resolution / 2),
+                             static_cast<float>(y * resolution + resolution / 2),
+                             static_cast<float>(z * resolution + resolution / 2),
+                             static_cast<float>(prob_int) / 32767.0f});
     }
   }
 

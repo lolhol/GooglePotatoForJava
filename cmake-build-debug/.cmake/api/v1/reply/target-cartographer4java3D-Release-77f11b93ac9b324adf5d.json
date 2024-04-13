@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "libcartographer4java.so"
+			"path" : "libcartographer4java3D.so"
 		}
 	],
 	"backtrace" : 1,
@@ -32,7 +32,7 @@
 			"/usr/lib/x86_64-linux-gnu/cmake/glog/glog-targets.cmake",
 			"/usr/lib/x86_64-linux-gnu/cmake/glog/glog-config.cmake",
 			"/usr/lib/x86_64-linux-gnu/cmake/gflags/gflags-config.cmake",
-			"/home/ubuntu/.cache/JetBrains/RemoteDev/dist/1bd5baa36ed96_CLion-241.14494.102/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake",
+			"/home/godbrigero/.cache/JetBrains/RemoteDev/dist/3d8b36b2566c3_CLion-241.14494.229/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeFindDependencyMacro.cmake",
 			"/usr/local/lib/cmake/absl/abslTargets.cmake",
 			"/usr/local/lib/cmake/absl/abslConfig.cmake"
 		],
@@ -44,19 +44,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 44,
+				"line" : 22,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 72,
+				"line" : 73,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 66,
+				"line" : 42,
 				"parent" : 0
 			},
 			{
@@ -290,7 +290,7 @@
 			{
 				"command" : 7,
 				"file" : 0,
-				"line" : 84,
+				"line" : 96,
 				"parent" : 0
 			},
 			{
@@ -320,7 +320,7 @@
 			{
 				"command" : 10,
 				"file" : 0,
-				"line" : 69,
+				"line" : 70,
 				"parent" : 0
 			}
 		]
@@ -369,7 +369,7 @@
 					"define" : "GOOGLE_GLOG_DLL_DECL_FOR_UNITTESTS="
 				},
 				{
-					"define" : "cartographer4java_EXPORTS"
+					"define" : "cartographer4java3D_EXPORTS"
 				}
 			],
 			"includes" : 
@@ -390,7 +390,7 @@
 				{
 					"backtrace" : 50,
 					"isSystem" : true,
-					"path" : "/home/ubuntu/Documents/cartographer"
+					"path" : "/home/godbrigero/Documents/cartographer"
 				},
 				{
 					"backtrace" : 50,
@@ -410,14 +410,11 @@
 				6,
 				7,
 				8,
-				9,
-				11,
-				13,
-				15,
-				18,
-				20,
-				22,
-				24
+				10,
+				12,
+				14,
+				17,
+				19
 			]
 		}
 	],
@@ -425,10 +422,10 @@
 	[
 		{
 			"backtrace" : 45,
-			"id" : "JavaJarify::@6890427a1f51a3e7e1df"
+			"id" : "JavaJarify3D::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "cartographer4java::@6890427a1f51a3e7e1df",
+	"id" : "cartographer4java3D::@6890427a1f51a3e7e1df",
 	"install" : 
 	{
 		"destinations" : 
@@ -692,8 +689,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "cartographer4java",
-	"nameOnDisk" : "libcartographer4java.so",
+	"name" : "cartographer4java3D",
+	"nameOnDisk" : "libcartographer4java3D.so",
 	"paths" : 
 	{
 		"build" : ".",
@@ -714,29 +711,25 @@
 				6,
 				7,
 				8,
-				9,
-				11,
-				13,
-				15,
-				18,
-				20,
-				22,
-				24
+				10,
+				12,
+				14,
+				17,
+				19
 			]
 		},
 		{
 			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
-				10,
-				12,
-				14,
+				9,
+				11,
+				13,
+				15,
 				16,
-				17,
-				19,
-				21,
-				23,
-				25
+				18,
+				20,
+				21
 			]
 		}
 	],
@@ -758,12 +751,6 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "java/brigero/cartographer4java/cartographer3D4java.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "java/brigero/cartographer4java/cartographer4java.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -848,17 +835,6 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "test/Mapping3DTest.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "test/Mapping3DTest.h",
-			"sourceGroupIndex" : 1
-		},
-		{
-			"backtrace" : 1,
-			"compileGroupIndex" : 0,
 			"path" : "util/util3D/OdomData3D.cpp",
 			"sourceGroupIndex" : 0
 		},
@@ -880,13 +856,7 @@
 		},
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "util/util3D/CartoDataConvert.cpp",
-			"sourceGroupIndex" : 0
-		},
-		{
-			"backtrace" : 1,
-			"path" : "util/util3D/CartoDataConvert.h",
+			"path" : "util/data_transform.h",
 			"sourceGroupIndex" : 1
 		}
 	],

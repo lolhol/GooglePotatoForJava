@@ -1,4 +1,4 @@
-ToolSet: 1.0 (local)Ninja: 1.11.1@/home/ubuntu/.cache/JetBrains/RemoteDev/dist/1bd5baa36ed96_CLion-241.14494.102/bin/ninja/linux/x64/ninja
+ToolSet: 1.0 (local)Ninja: 1.11.1@/home/godbrigero/.cache/JetBrains/RemoteDev/dist/3d8b36b2566c3_CLion-241.14494.229/bin/ninja/linux/x64/ninja
 Options: 
 
-Options:-DCMAKE_MAKE_PROGRAM=/home/ubuntu/.cache/JetBrains/RemoteDev/dist/1bd5baa36ed96_CLion-241.14494.102/bin/ninja/linux/x64/ninja
+Options:-DCMAKE_MAKE_PROGRAM=/home/godbrigero/.cache/JetBrains/RemoteDev/dist/3d8b36b2566c3_CLion-241.14494.229/bin/ninja/linux/x64/ninja
